@@ -1,17 +1,16 @@
-import { useState } from 'react'
+// import { useState } from 'react'
 import './index.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+import Header from './components/Header.jsx'
+
+export default function App() {
+  // const [count, setCount] = useState(0)
 
   return (
     <>
-      <div>
+      <Header />
 
-
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
+      {/* <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
@@ -21,9 +20,8 @@ function App() {
       </div>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
-      </p>
+      </p> */}
     </>
   )
 }
 
-export default App
