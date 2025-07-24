@@ -1,15 +1,25 @@
-// import labelsButton from "../data/LabelsButton";
-
 export default function Button(props) {
-    const labelsButton = props.labels;
-    console.log(labelsButton, props);
+    const labels = props.labels;
+    const selected = props.selected;
+    const handleClick = props.onSelect;
+
     return (
-        <>
-            {labelsButton.map((item) => (
-                <button key={item.id} type='button' className='btn btn-primary mx-1 my-2'>
-                    {item.label}
-                </button >
-            ))}
-        </>
+        <div className="d-flex justify-content-start gap-2 flex-wrap my-3">
+            {labels.map((item) => {
+                const isSelected = selected && selected.id === item.id;
+                const buttonClass = isSelected ? "btn-warning" : "btn-primary";
+
+                return (
+                    <button
+                        key={item.id}
+                        type='button'
+                        className={`btn ${buttonClass}`}
+                        onClick={() => handleClick(item)}
+                    >
+                        {item.label}
+                    </button>
+                )
+            })}
+        </div>
     )
 }
